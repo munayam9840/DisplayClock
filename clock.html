@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <title>Displaying Clock</title>
+    <style type = "text/css">
+    #clock {
+        width: 900px;
+        margin: 150px;
+        text-align: center;
+        font-size: 150px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="clock"></div>
+    <script type="text/javascript">
+
+
+        setInterval(DisplayClock,500);
+        function DisplayClock () {
+            var time = new Date();
+            var hrs = time.getHours();
+            var min = time.getMinutes();
+            var sec = time.getSeconds();
+            var ante_post = 'AM';
+            if (hrs > 12)
+                ante_post = 'PM';
+
+            if (hrs > 12 ) {
+                hrs =hrs -12;
+            }
+
+            if (hrs == 0 ) {
+                hrs = 12;
+            }
+
+            if (hrs < 10) {
+                hrs = '0' + hrs;
+            }
+
+            if (min < 10) {
+                min = '0' + min;
+            }
+
+            if (sec < 10) {
+                sec = '0' + sec
+            }
+
+
+            document.getElementById('clock').innerHTML = hrs + ':' + min + ':' + sec + ' ' + ante_post;
+        }
+    </script>
+
+
+</body>
+ <!it took me about 26min to complete!!>
